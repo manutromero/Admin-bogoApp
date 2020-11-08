@@ -178,9 +178,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12 m6 registro-bienvenida">
-                        <h4>Realiza un Post</h4>
+                        <h4>Crea una ruta</h4>
                         <div class="registro-bienvenida-texto">
-                            Comparte un video interesante para la comunidad
+                            Completa los campos para crear una ruta en la app
                         </div>
                         <span>Comparte ahora</span>
                     </div>
@@ -194,18 +194,34 @@
                             <label for="descripcionNewPost">Descripción:</label>
                         </div>
                         <div class="input-field">
+                            <textarea id="FechadelHecho" type="text"  maxlength="200" data-length="200" class="materialize-textarea" required></textarea>
+                            <label for="FechadelHecho">Fecha del hecho:</label>
+                        </div>
+                        <!-- <div class="input-field">
                             <input id="linkVideoNewPost" type="text" required />
                             <label for="linkVideoNewPost">Enlace del video:</label>
-                        </div>
+                        </div> -->
                         <div class="progress-panel">
-                            <label for="btnUploadFile">Imagen:</label>
+                            <label for="btnUploadFile">Imagen principal:</label>
                             <input type="file" value="upload" id="btnUploadFile" />
                             <div class="progress">
                                 <div class="determinate" style="width: 0%"></div>
                             </div>
                         </div>
+                        <div class="input-field">
+                            <textarea id="Puntos" type="text"  maxlength="200" data-length="200" class="materialize-textarea" required></textarea>
+                            <label for="Puntos">Cantidad de puntos:</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="PuntosInteres" type="text"  maxlength="200" data-length="200" class="materialize-textarea" required></textarea>
+                            <label for="PuntosInteres">Cantidad de puntos de interes:</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="TiempoRecorrido" type="text"  maxlength="200" data-length="200" class="materialize-textarea" required></textarea>
+                            <label for="TiempoRecorrido">Tiempo de recorrido (Minutos):</label>
+                        </div>
                         <div class="div-btnInicioSesion">
-                            <a id="btnRegistroPost" class="btn waves-effect waves-light">Crear Post<i class="material-icons left">create</i></a>
+                            <a id="btnRegistroPost" class="btn waves-effect waves-light">Crear Ruta<i class="material-icons left">create</i></a>
                         </div>                      
                     </div>
                 </div>
@@ -222,6 +238,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
 
 <!--build:js js/main.min.js -->
 <script type="text/javascript" src="js/config/ConfigFirebase.js"></script>

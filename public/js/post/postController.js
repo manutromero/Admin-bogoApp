@@ -1,4 +1,7 @@
 $(() => {
+
+
+
   $('#btnModalPost').click(() => {
     $('#tituloNewPost').val('')
     $('#descripcionNewPost').val('')
@@ -13,29 +16,41 @@ $(() => {
 
     $('#modalPost').modal('open')
   })
-
+  console.log("SOY CONTROLADOR POST")
   $('#btnRegistroPost').click(() => {
-    const post = new Post()
-
+    const objPost = new Post()
+    const user = firebase.auth().currentUser
     // TODO: Validar que el usuario esta autenticado
 
-    // Materialize.toast(`Para crear el post debes estar autenticado`, 4000)
+    if(user == null){
+       Materialize.toast(`Para crear el post debes estar autenticado`, 4000)
+       return
+    }
+
+    
 
     const titulo = $('#tituloNewPost').val()
-    const descripcion = $('#descripcionNewPost').val()
-    const videoLink = $('#linkVideoNewPost').val()
+    const descripcionCorta = $('#descripcionNewPost').val()
+    const fechaHecho = $('#FechadelHecho').val()
+    const Puntos = $('#Puntos').val()
+    const PuntosInteres = $('#PuntosInteres').val()
+    const TiempoRecorrido = $('#TiempoRecorrido').val()
+
     const imagenLink = sessionStorage.getItem('imgNewPost') == 'null'
       ? null
       : sessionStorage.getItem('imgNewPost')
 
-    post
+    objPost
       .crearPost(
         user.uid,
         user.email,
         titulo,
-        descripcion,
+        descripcionCorta,
         imagenLink,
-        videoLink
+        fechaHecho,
+        Puntos,
+        PuntosInteres,
+        TiempoRecorrido
       )
       .then(resp => {
         Materialize.toast(`Post creado correctamente`, 4000)
@@ -56,4 +71,8 @@ $(() => {
     // TODO: Referencia al storage
     
   })
+
+
+
+
 })
