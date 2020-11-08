@@ -1,24 +1,24 @@
 {
-  "name": "blog-geek",
+  "name": "Admin-bogoApp",
   "version": "1.0.0",
-  "description": "Blog Geek",
+  "description": "Admin-bogoApp",
   "main": "app/general.js",
   "scripts": {
     "test": "no test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jggomez/blogvideos-ucc.git"
+    "url": "git+https://github.com/manutromero/Admin-bogoApp"
   },
   "keywords": [
     "blog"
   ],
-  "author": "Juan Guillermo Gómez",
+  "author": "Manuel Romero",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jggomez/blogvideos-ucc/issues"
+    "url": "https://github.com/manutromero/Admin-bogoApp/issues"
   },
-  "homepage": "https://github.com/jggomez/blogvideos-ucc#readme",
+  "homepage": "https://github.com/manutromero/Admin-bogoApp#readme",
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
