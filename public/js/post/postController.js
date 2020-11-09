@@ -61,7 +61,7 @@ $(() => {
           RelatedData: [{
             Description: $(element).find(`#Descripcion_relacionados_${id}`).val(),
             URL: $(element).find(`#URL_relacionados_${id}`).val(),
-            title: $(element).find(`#Title_relacionado_${id}`).val()
+            Title: $(element).find(`#Title_relacionado_${id}`).val()
           }],
         }
 
