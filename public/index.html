@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VideoBlog Geek</title>
+    <title>Admin - BogoApp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--build:css css/styles.min.css -->
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -21,8 +22,8 @@
         <figure class="header-logotipo">
             <img src="imagenes/logo.png" alt="Blog Logotipo">
         </figure>
-        <h2 class="titulo">VideoBlog Geek</h2>
-        <h3 class="titulo-a">Encuentra los Videos mas poderosos de los geeks</h2>
+        <h2 class="titulo">Admin - BogoApp</h2>
+        <h3 class="titulo-a">Encuentra los lugares mas importantes de bogota</h2>
             <a id="btnInicioSesion" class="modal-trigger waves-effect waves-light btn btnPpal">Iniciar Sesión</a>
             <figure class="header-avatar">
                 <img id="avatar" src="imagenes/usuario.png" alt="Avatar">
@@ -176,15 +177,14 @@
     <div id="modalPost" class="modal modal-registro">
         <div class="modal-content">
             <div class="container">
-                <div class="row">
+                <div class="col">
                     <div class="col s12 m6 registro-bienvenida">
                         <h4>Crea una ruta</h4>
                         <div class="registro-bienvenida-texto">
                             Completa los campos para crear una ruta en la app
                         </div>
-                        <span>Comparte ahora</span>
                     </div>
-                    <div class="col s12 m6 registro-formulario">
+                    <div class="col s12 m12 registro-formulario">
                         <div class="input-field">
                             <input id="tituloNewPost" type="text" maxlength="30" data-length="30" required />
                             <label for="tituloNewPost">Titulo:</label>
@@ -220,9 +220,100 @@
                             <textarea id="TiempoRecorrido" type="text"  maxlength="200" data-length="200" class="materialize-textarea" required></textarea>
                             <label for="TiempoRecorrido">Tiempo de recorrido (Minutos):</label>
                         </div>
-                        <div class="div-btnInicioSesion">
-                            <a id="btnRegistroPost" class="btn waves-effect waves-light">Crear Ruta<i class="material-icons left">create</i></a>
-                        </div>                      
+                        <div>
+                            <h4>Puntos</h4>
+                            <ul id="ContainerPoints" class="collapsible">
+                                <li>
+                                  <div class="collapsible-header">
+                                    <i class="material-icons">place</i>
+                                        Punto 1
+                                    <span class="badge">1</span></div>
+                                    <div class="collapsible-body">
+
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="route_name_1" type="text" class="validate" required>
+                                                <label for="route_name">Nombre Punto</label>
+                                              </div>
+                                            <div class="input-field col s6">
+                                              <input id="adress_name_1" type="text" class="validate" required>
+                                              <label for="adress_name">Dirección</label>
+                                            </div>
+                                          </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                              <input id="descripcion_1" type="email" class="validate" required>
+                                              <label for="descripcion">Description</label>
+                                            </div>
+                                          </div>
+
+                                          <h5>Audio</h5>
+                                         <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="title_audo_1" type="text" class="validate" required> 
+                                                <label for="title_audo">Titulo de audio</label>
+                                              </div>
+                                            <div class="input-field col s6">
+                                              <input id="Audio_url_1" type="text" class="validate" required>
+                                              <label for="Audio_url">URL Audio</label>
+                                            </div>
+                                          </div>
+                                          
+
+                                          <h5>Images</h5>
+                                          <div class="row">
+                                            <div class="progress-panel">
+                                                <label for="btnUploadFile">Imagen del punto:</label>
+                                                <input type="file" value="upload" id="btnUploadFile" />
+                                                <div class="progress">
+                                                    <div class="determinate" style="width: 0%"></div>
+                                                </div>
+                                            </div>
+                                           </div>
+                                           
+                                           <h5>GeoCoordenada</h5>
+                                           <div class="row">
+                                              <div class="input-field col s6">
+                                                  <input id="Latitud_1" type="number" class="validate" required>
+                                                  <label for="Latitud">Latitud</label>
+                                                </div>
+                                              <div class="input-field col s6">
+                                                <input id="Longitud_1" type="number" class="validate" required>
+                                                <label for="Longitud">Longitud</label>
+                                              </div>
+                                        </div>
+
+                                        <h5>Datos relacionados</h5>
+                                        <div class="row">
+                                           <div class="input-field col s4">
+                                               <input id="Descripcion_relacionados_1" type="text" class="validate" required>
+                                               <label for="Descripcion_relacionados">Descripcion relacionados</label>
+                                             </div>
+                                           <div class="input-field col s4">
+                                             <input id="URL_relacionados_1" type="text" class="validate" required>
+                                             <label for="URL_relacionados">URL Recurso</label>
+                                           </div>
+                                           <div class="input-field col s4">
+                                            <input id="Title_relacionado_1" type="text" class="validate" required>
+                                            <label for="Title_relacionado">Titulo Dato relacinado</label>
+                                          </div>
+                                         </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                       
+                        <div class="row  s12">
+                            <div class="input-field col s6">
+                                <a id="btnAddPunto" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Agregar Punto</a>
+                            </div>
+                            <div class="input-field col s6 div-btnInicioSesion">
+                                <a id="btnRegistroPost" class="btn waves-effect waves-light">Crear Ruta<i class="material-icons left">create</i></a>
+                            </div>
+                        </div>
+                                             
                     </div>
                 </div>
             </div>
@@ -234,7 +325,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>

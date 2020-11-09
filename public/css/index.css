@@ -327,10 +327,13 @@ label
   font-weight: bold;
 }
 .registro-formulario {
-  border-left: 0.3em solid #126798;
+  /* border-left: 0.3em solid #126798; */
 }
 .registro-formulario div {
   margin: 0;
+}
+.Is-visible{
+  display: block;
 }
 .registro-formulario label {
   color: #126798;

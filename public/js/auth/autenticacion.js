@@ -3,11 +3,12 @@ class Autenticacion {
     firebase.auth().signInWithEmailAndPassword(email,password)
       .then(result => {
         if(result.user.emailVerified){
-          Materialize.toast(`Bienvenido ${result.user.displayName}`, 5000)
+          M.toast({html:`Bienvenido ${result.user.displayName}`, inDuration: 5000} );
           $('#avatar').attr('src', 'imagenes/usuario_auth.png')
         }else{
           firebase.auth().signOut()
-          Materialize.toast(`Porfavor realiza la verificacion del correo`, 5000)
+          M.toast({html:`Porfavor realiza la verificacion del correo`, inDuration: 5000} );
+
         }
       })
     
@@ -27,17 +28,20 @@ class Autenticacion {
       }
 
       result.user.sendEmailVerification(configuracion).catch(error => {
-        Materialize.toast(error.message, 4000)
+        M.toast({html:`${error.message}`, inDuration: 5000} );
+
       })  
 
       firabase.auth().signOut()
 
-      Materialize.toast(`Bienvenido ${nombres}, debes realizar el proceso de verificacion `, 4000)
+      M.toast({html:`Bienvenido ${nombres}, debes realizar el proceso de verificacion `, inDuration: 5000} );
 
       $('.modal').modal('close')
 
     } ).catch(error => {
-        Materialize.toast(error.message, 4000)
+
+        M.toast({html:`${error.message}`, inDuration: 5000} );
+
     })
 
 
@@ -53,11 +57,13 @@ class Autenticacion {
     .then( result => {
       $('#avatar').attr('src', result.user.photoURL)
       $('.modal').modal('close')
-      Materialize.toast(`Bienvenido ${result.user.displayName} !! `, 4000)
+      M.toast({html:`Bienvenido ${result.user.displayName} !!`, inDuration: 5000} );
+
     } )
     .catch(error => {
       console.error(error)
-      Materialize.toast(`Erro al autenticarse con google ${error} `, 4000)
+      M.toast({html:`Erro al autenticarse con google ${error}`, inDuration: 5000} );
+
     })
     
   }
