@@ -98,11 +98,11 @@ $(() => {
   $('#btnUploadFile').on('change', e => {
     // TODO: Validar que el usuario esta autenticado
 
-    // Materialize.toast(`Para crear el post debes estar autenticado`, 4000)
-
     const file = e.target.files[0]
 
     // TODO: Referencia al storage
+    const post = new Post()
+    post.subirImagenPost(file)
     
   })
 

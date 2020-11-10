@@ -191,4 +191,28 @@ class Post {
                 </div>
             </article>`
   }
+
+  subirImagenPost(file, uid){
+
+    var storageRef = firebase.storage().ref();
+    var uploadTask = storageRef.child(`${file.name}`).put(file);
+
+
+    uploadTask.on('state_changed', function(snapshot){
+
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+        $('.determinate').attr('style', `width: ${progress}%`)
+
+
+        },function(error) {
+            // Handle unsuccessful uploads
+        },function() {
+            // Handle successful uploads on complete
+            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                console.log('File available at', downloadURL);
+            })  
+        })
+    }
 }
