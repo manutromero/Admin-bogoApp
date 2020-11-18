@@ -22,8 +22,8 @@ class Post {
         autor: emailUser,
         TitleRoute: titulo,
         ShortDescription: descripcionCorta,
-        Image: "https://firebasestorage.googleapis.com/v0/b/bogoapp-59711.appspot.com/o/ElBogotazo.jpg?alt=media&token=ceaf26d7-354e-4a6e-8c5f-a673a15c2288",
-        thumbnail: "https://firebasestorage.googleapis.com/v0/b/bogoapp-59711.appspot.com/o/ElBogotazo.jpg?alt=media&token=ceaf26d7-354e-4a6e-8c5f-a673a15c2288",
+        Image: imagenLink,
+        thumbnail: imagenLink,
         Poinst: parseInt(Puntos),
         PointsInterest: parseInt(PuntosInteres),
         Time: parseInt(TiempoRecorrido),
@@ -34,7 +34,7 @@ class Post {
         const idRoute = refDoc.id
         console.log(idRoute,"idRoute")
         this.db.collection('RouteDetails').add({
-            Image:"https://firebasestorage.googleapis.com/v0/b/bogoapp-59711.appspot.com/o/ElBogotazo.jpg?alt=media&token=ceaf26d7-354e-4a6e-8c5f-a673a15c2288",
+            Image: imagenLink,
             Points: PointsdataArray,
             TitleRoute: titulo
         }).then(res =>{
@@ -212,6 +212,7 @@ class Post {
             // For instance, get the download URL: https://firebasestorage.googleapis.com/...
             uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
                 console.log('File available at', downloadURL);
+                sessionStorage.setItem("imgNewPost",downloadURL)
             })  
         })
     }
