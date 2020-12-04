@@ -25,7 +25,7 @@ Para correr el repositorio debes ejecutar el comando
 ## Construido con 🛠️
 
 * javascript Puro
-* [Firebase](https://firebase.google.com/docs?authuser=0) - Manejador de dependencias
+* [Firebase](https://firebase.google.com/docs?authuser=0) - Backend
 
 ## Autores ✒️
 
