@@ -1,4 +1,4 @@
-# Título del Proyecto
+# Administrador BogoApp
 
 Este proyecto conteniene el codigo del administrador de la aplicacion bogoApp. Aplicacion que sirve como guia multimedia para la ciudad de bogota
 
